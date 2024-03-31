@@ -555,15 +555,34 @@ const CreateSchools = () => {
             <Typography variant="body">{selectedSubject}</Typography>
           </Box>
           <Box sx={{ border: '1px solid #051e34', width: '100%', height: '400px', my: 2, overflowY: 'scroll', p: 2 }}>
+
+          <FormControl sx={{ m: 1, minWidth: 600 }} size="small">
+                <InputLabel id="demo-select-small-label">Term</InputLabel>
+                <Select
+                  labelId="demo-select-small-label"
+                  id="demo-select-small"
+                  value={term}
+                  label="Term"
+                  onChange={(e) => setTerm(e.target.value)}
+                >
+                  <MenuItem value="">
+                    <em>Term</em>
+                  </MenuItem>
+                  <MenuItem value={'first-term'}>First Term</MenuItem>
+                  <MenuItem value={'second-term'}>Second Term</MenuItem>
+                  <MenuItem value={'third-term'}>Third Term</MenuItem>
+                </Select>
+              </FormControl>
             <Grid container spacing={2}>
-              <TextField
+             
+              {/* <TextField
                 fullWidth
                 variant="outlined"
                 label="Term"
                 margin="normal"
                 value={term}
                 onChange={(e) => setTerm(e.target.value)}
-              />
+              /> */}
               <Grid item lg={6} xs={12}>
                 <Autocomplete
                   disablePortal
